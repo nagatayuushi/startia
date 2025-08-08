@@ -31,12 +31,15 @@ main{
 }
 
 .section_container{
-    border-radius:20px;
-    background:#fff;
-    padding:184px 20px 110px;
     text-align:center;
     max-width:1160px;
     margin:0 auto;
+}
+
+.main_page{
+    background:#fff;
+    border-radius:20px;
+    padding:184px 20px 110px;
     border:5px solid #2D7E98;
 }
 
@@ -88,9 +91,8 @@ h1 span{
     color:#FFF;
 }
 
-
 .button_area{
-    text-align: center;
+    text-align:center;
     max-width:250px;
     margin:0 auto;
 }
@@ -103,7 +105,7 @@ h1 span{
     position:relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:center;
     position:relative;
     padding:15px;
     border-radius: 40px;
@@ -150,3 +152,20 @@ h1 span{
     -webkit-transform:rotate(45deg);
     transform:rotate(45deg);
 }
+
+
+.result_page{
+    /* background-image: url('../images/result_bg.png'); */
+}
+
+.contents{
+    position:relative;
+}
+
+.contents img{
+    width:100%;
+}
+/* .contents_container{
+    background-image: url('../images/result_bg.png');
+    background-repeat: no-repeat;
+} */
