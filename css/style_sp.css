@@ -1,0 +1,213 @@
+
+@media(max-width:768px){
+    .sp{
+        display:block;
+    }
+    header{
+        padding:20px;
+    }
+    header img{
+        margin:0;
+    }
+
+    main{
+        margin:20px auto;
+    }
+
+    h1 {
+        /* font-size:28px; */
+        font-size:18px;
+        margin-bottom:39px;
+    }
+
+    h1 span{
+        font-size:41px;
+        width:54px;
+        height:54px;
+    }
+
+    .common_btn{
+        font-size:14px;
+    }
+
+    .arrow{
+        width:28px;
+        height:28px;
+    }
+    .arrow::after{
+        left:9px;
+        width:6px;
+        height:6px;
+    }
+
+    /*q_page*/
+    .question_box h1 {
+        font-size: 16px;
+        margin-bottom:42px;
+    }
+    .q_form label{
+        font-size:14px;
+    }
+    .q_form label input[type="radio"] {
+        height:16px;
+        width:16px;
+    }
+
+    #s0_answer{
+        font-size:12px;
+        padding:12px 10px 14px;
+    }
+
+    .q_no{
+        font-size:15px;
+    }
+    .back_btn{
+        font-size:12px;
+    }
+
+    .result_contents{
+        padding:10px;
+    }
+
+    .about{
+        max-width: 720px;
+        margin: 0 auto;
+        padding:50px 10px 0;
+    }
+    .about h2{
+        padding-bottom:14px;
+        font-size:18px;
+    }
+
+    .about p{
+        margin-top:14px;
+        font-size:12px;
+    }
+
+    .trouble{
+        margin:24px auto 0;
+        padding:24px 15px 15px;
+    }
+
+    .trouble h3{
+        font-size:18px;
+    }
+    .text_lists li{
+        font-size:12px;
+        align-items:flex-start;
+    }
+
+    .recommend{
+        margin: 50px auto 0;
+        padding:24px 10px;
+    }
+
+    .recommend h2{
+        font-size:18px;
+    }
+
+    .download_list_column label{
+        font-size:12px;
+        align-items:flex-start;
+    }
+
+    .form{
+        margin:36px auto 30px;
+    }
+
+    .form h2{
+        font-size:18px;
+        padding-bottom:14px;
+    }
+    .form_area{
+        margin-top:16px;
+        gap:16px;
+    }
+    .form_area dl{
+        grid-template-columns:1fr;
+        gap:9px;
+    }
+    .form_area dl dt{
+        font-size:14px;
+    }
+    .msg_box{
+        padding:12px;
+        font-size:12px;
+    }
+    .form_area > label{
+        font-size: 12px;
+    }
+    .form_area > label input{
+        width:14px;
+        height:14px;
+    }
+    .download{
+        max-width:260px;
+    }
+
+
+    .success_page{
+        padding: 30px 15px;
+    }
+
+    .success_page p{
+        margin:16px 0 24px;
+        font-size:14px;
+    }
+
+    .balloon p{
+        font-size:12px;
+        margin:2px;
+    }
+
+    .success_page .button_area .common_btn{
+        font-size:16px;
+    }
+
+    .speech_bubble_area{
+        position:relative;
+        flex-direction: column;
+    }
+
+    .social_contents{
+        padding:24px 12px;
+    }
+
+    .speech_bubble{
+        width:100%;
+        font-size:14px;
+    }
+
+    .speech_bubble::after {
+        content:unset;
+    }
+
+    .speech_bubble_area img{
+        position: absolute;
+        right:-10px;
+        width: 34px;
+        height:45px;
+        bottom: 0;
+    }
+
+    .social_links{
+        flex-wrap: wrap;
+        gap:10px;
+    }
+
+    .social_links li{
+        text-align: center;
+    }
+
+    .social_links li:nth-child(-n+2) {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    .social_links li:nth-child(n+3) {
+        flex: 0 0 calc(33.333% - 10px);
+    }
+
+    .social_links li span{
+        font-size:14px;
+    }
+}

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="”robots”" content="”noindex, nofollow">
-    <title>業務効率を向上させたい会社には</title>
+    <meta name="robots" content="”noindex, nofollow">
+    <title>ビジ助診断｜診断結果</title>
     <link rel="stylesheet" href="css/style_pc.css">
     <link rel="stylesheet" href="css/style_sp.css">
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -17,18 +17,20 @@
     </header>
 
     <main>
-        <section class="section_container result_page">
-            <div class="title_area">
-                <h1>診断結果</h1>
+        <section class="contents title">
+            <h1>診断結果</h1>
+        </section>
+
+        <section class="contents result_page">
+            <div class="content_decoration">
+                <img src="images/result_bg.png" alt="">
             </div>
 
-            <div class="contents">
-                <img src="images/result_bg.png" alt="">
-
-                <div class="contents_container">
+            <div class="result_contents">
+                <div class="about">
                     <h2>
                         業務効率を向上させたい貴社には、<br>
-                        <span>〇〇〇〇〇〇〇〇</span>の見直しを推奨します。
+                        <span class="t_blue">〇〇〇〇〇〇〇〇</span>の見直しを推奨します。
                     </h2>
 
                     <p>
@@ -37,32 +39,69 @@
                     </p>
                 </div>
 
-                <!-- <div>
-                    <p>こんなお悩みをお持ちの方に</p>
-                    <ul>
-                        <li>BtoBにおけるありがちな課題/該当ユーザーがよく陥る状況など</li>
-                        <li>テキストテキストテキストテキスト</li>
-                        <li>テキストテキストテキストテキスト</li>
-                        <li>テキストテキストテキストテキスト</li>
+                <div class="about trouble">
+                    <h3 class="t_blue">
+                        <span>\</span> こんなお悩みをお持ちの方に <span>/</span>
+                    </h3>
+                    <ul class="trouble_lists text_lists">
+                        <li><span class="chk"><span></span></span>BtoBにおけるありがちな課題/該当ユーザーがよく陥る状況など</li>
+                        <li><span class="chk"><span></span></span>テキストテキストテキストテキスト</li>
+                        <li><span class="chk"><span></span></span>テキストテキストテキストテキスト</li>
+                        <li><span class="chk"><span></span></span>テキストテキストテキストテキストテキスト</li>
                     </ul>
                 </div>
 
-                <div>
-                    <p>おすすめの資料はこちら！</p>
-                    <div>
-                        <div>
+                <div class="recommend">
+                    <h2>おすすめの資料はこちら！</h2>
+                    <div class="download_lists">
+                        <div class="download_list_column">
                             <label><input type="checkbox"> クラウドボイスの導入ガイド</label>
-                            <img src="" alt="">
+                            <img src="images/profile1.png" alt="クラウドボイスの導入ガイド">
                         </div>
-                        <div>
+                        <div class="download_list_column">
                             <label><input type="checkbox"> 四大振込代行サービス徹底比較</label>
-                            <img src="" alt="">
+                            <img src="images/profile2.png" alt="四大振込代行サービス徹底比較">
                         </div>
                     </div>
-                </div> -->
+                </div>
 
+                <div class="form">
+                    <h2>今すぐダウンロード！</h2>
+                    <div class="form_area">
+                        <dl>
+                            <dt>メールアドレス<span>必須</span></dt>
+                            <dd><input type="text" class="req" id="email"></dd>
+                        </dl>
+
+                        <div class="msg_box">
+                            スターティア株式会社（以下「弊社」といいます。）の「個人情報保護方針」に同意の上、
+                            ご登録をお願いいたします。お客様からご提供いただいた情報（個人情報を含みます。）は、
+                            弊社及びスターティアホールディングスグループより、広告・宣伝メールが送信されます。
+                        </div>
+
+                        <label><input type="checkbox" id="doui" class="req"> 同意する</label>
+
+                        <button class="blue common_btn download">
+                            同意してダウンロードする
+                            <span class="arrow"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+
+    <script>
+        $(document).ready(function(){
+            //ローカルストレージのデータ削除
+            localStorage.removeItem ("answers");
+
+            // //ダウンロード処理(まだ未実装)
+            // $('#download').on('click', function(){
+            //     //ローカルストレージのデータ削除
+            //     localStorage.removeItem ("answers");
+            // });
+        });
+    </script>
 </body>
 </html>

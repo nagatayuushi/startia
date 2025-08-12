@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="”robots”" content="”noindex, nofollow">
+    <meta name="robots" content="”noindex, nofollow">
     <title>ビジ助診断</title>
     <link rel="stylesheet" href="css/style_pc.css">
     <link rel="stylesheet" href="css/style_sp.css">
 
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -27,16 +27,434 @@
                     <span class="highlight">断</span>
                     <img src="images/character.png" alt="ビジ助キャラクター">
                 </h1>
-                <p>すみとももも</p>
+                <p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>
             </div>
 
             <div class="button_area">
-                <button class="start">
+                <button class="blue common_btn start">
                     診断スタート
                     <span class="arrow"></span>
                 </button>
             </div>
         </section>
     </main>
+
+    <script id="questions_data" type="application/json">
+        [
+          {
+            "id": "S0",
+            "question": "日々の業務の中で特に課題・改善したいものはございますか？",
+            "options": [
+              { "text": "業務効率を向上させたい", "next": "A-Q1" },
+              { "text": "セキュリティを強化したい", "next": "B-Q1" },
+              { "text": "売上を向上させたい", "next": "C-Q1" },
+              { "text": "コストを削減したい", "next": "D-Q1" }
+            ]
+          },
+          {
+            "id": "A-Q1",
+            "question": "ウイルスソフトを導入している",
+            "options": [
+              { "text": "はい", "next": "A-Q2" },
+              { "text": "わからない", "next": "A-Q2" },
+              { "text": "いいえ", "next": "A-Q2" }
+            ]
+          },
+          {
+            "id": "A-Q2",
+            "question": "家庭用のWi-Fi機器を使用している",
+            "options": [
+              { "text": "はい", "next": "A-Q3" },
+              { "text": "わからない", "next": "A-Q3" },
+              { "text": "いいえ", "next": "A-Q3" }
+            ]
+          },
+          {
+            "id": "A-Q3",
+            "question": "UTMを導入している",
+            "options": [
+              { "text": "はい", "next": "A-Q4" },
+              { "text": "わからない", "next": "A-Q4" },
+              { "text": "いいえ", "next": "A-Q4" }
+            ]
+          },
+          {
+            "id": "A-Q4",
+            "question": "コロナ渦以降、テレワークが社内で普及した",
+            "options": [
+              { "text": "はい", "next": "A-Q4" },
+              { "text": "わからない", "next": "A-Q4" },
+              { "text": "いいえ", "next": "A-Q4" }
+            ]
+          },
+          {
+            "id": "A-Q5",
+            "question": "セキュリティ対策はしっかりしたいが何から手をつければいいのかわからない",
+            "options": [
+              { "text": "はい", "next": "A-Q6" },
+              { "text": "わからない", "next": "A-Q6" },
+              { "text": "いいえ", "next": "A-Q6" }
+            ]
+          },
+          {
+            "id": "A-Q6",
+            "question": "ランサムウェアが何かよくわかっていない",
+            "options": [
+              { "text": "はい", "next": "end" },
+              { "text": "わからない", "next": "end" },
+              { "text": "いいえ", "next": "end" }
+            ]
+          },
+
+
+
+
+          {
+            "id": "B-Q1",
+            "question": "ウイルスソフトを導入している",
+            "options": [
+              { "text": "はい", "next": "B-Q2" },
+              { "text": "わからない", "next": "B-Q2" },
+              { "text": "いいえ", "next": "B-Q2" }
+            ]
+          },
+          {
+            "id": "B-Q2",
+            "question": "家庭用のWi-Fi機器を使用している",
+            "options": [
+              { "text": "はい", "next": "B-Q3" },
+              { "text": "わからない", "next": "B-Q3" },
+              { "text": "いいえ", "next": "B-Q3" }
+            ]
+          },
+          {
+            "id": "B-Q3",
+            "question": "UTMを導入している",
+            "options": [
+              { "text": "はい", "next": "B-Q4" },
+              { "text": "わからない", "next": "B-Q4" },
+              { "text": "いいえ", "next": "B-Q4" }
+            ]
+          },
+          {
+            "id": "B-Q4",
+            "question": "コロナ渦以降、テレワークが社内で普及した",
+            "options": [
+              { "text": "はい", "next": "B-Q5" },
+              { "text": "わからない", "next": "B-Q5" },
+              { "text": "いいえ", "next": "B-Q5" }
+            ]
+          },
+          {
+            "id": "B-Q5",
+            "question": "ウイルスソフトを導入している",
+            "options": [
+              { "text": "はい", "next": "B-Q6" },
+              { "text": "わからない", "next": "B-Q6" },
+              { "text": "いいえ", "next": "B-Q6" }
+            ]
+          },
+          {
+            "id": "B-Q6",
+            "question": "セキュリティ対策はしっかりしたいが何から手をつければいいのかわからない",
+            "options": [
+              { "text": "はい", "next": "B-Q7" },
+              { "text": "わからない", "next": "B-Q7" },
+              { "text": "いいえ", "next": "B-Q7" }
+            ]
+          },
+          {
+            "id": "B-Q7",
+            "question": "ランサムウェアが何かよくわかっていない",
+            "options": [
+              { "text": "はい", "next": "end" },
+              { "text": "わからない", "next": "end" },
+              { "text": "いいえ", "next": "end" }
+            ]
+          },
+
+
+
+          {
+            "id": "C-Q1",
+            "question": "自社のWebサイトがある",
+            "options": [
+              { "text": "はい", "next": "C-Q2" },
+              { "text": "わからない", "next": "C-Q2" },
+              { "text": "いいえ", "next": "C-Q2" }
+            ]
+          },
+          {
+            "id": "C-Q2",
+            "question": "Web広告など、Web施策に関心がある・または施策",
+            "options": [
+              { "text": "はい", "next": "C-Q3" },
+              { "text": "わからない", "next": "C-Q3" },
+              { "text": "いいえ", "next": "C-Q3" }
+            ]
+          },
+          {
+            "id": "C-Q3",
+            "question": "策の経験がある",
+            "options": [
+              { "text": "はい", "next": "C-Q4" },
+              { "text": "わからない", "next": "C-Q4" },
+              { "text": "いいえ", "next": "C-Q4" }
+            ]
+          },
+          {
+            "id": "C-Q4",
+            "question": "名刺の管理が煩雑になっている",
+            "options": [
+              { "text": "はい", "next": "C-Q5" },
+              { "text": "わからない", "next": "C-Q5" },
+              { "text": "いいえ", "next": "C-Q5" }
+            ]
+          },
+          {
+            "id": "C-Q5",
+            "question": "社内のマーケティング部が機能していない",
+            "options": [
+              { "text": "はい", "next": "C-Q6" },
+              { "text": "わからない", "next": "C-Q6" },
+              { "text": "いいえ", "next": "C-Q6" }
+            ]
+          },
+          {
+            "id": "C-Q6",
+            "question": "これからマーケティングを強化していきたい",
+            "options": [
+              { "text": "はい", "next": "C-Q7" },
+              { "text": "わからない", "next": "C-Q7" },
+              { "text": "いいえ", "next": "C-Q7" }
+            ]
+          },
+          {
+            "id": "C-Q7",
+            "question": "現在MAの導入を検討している",
+            "options": [
+              { "text": "はい", "next": "end" },
+              { "text": "わからない", "next": "end" },
+              { "text": "いいえ", "next": "end" }
+            ]
+          },
+
+
+
+
+          {
+            "id": "D-Q1",
+            "question": "コピー機・複合機のリース代が高いと感じる",
+            "options": [
+              { "text": "はい", "next": "D-Q2" },
+              { "text": "わからない", "next": "D-Q2" },
+              { "text": "いいえ", "next": "D-Q2" }
+            ]
+          },
+          {
+            "id": "D-Q2",
+            "question": "電気代が高いと感じる",
+            "options": [
+              { "text": "はい", "next": "D-Q3" },
+              { "text": "わからない", "next": "D-Q3" },
+              { "text": "いいえ", "next": "D-Q3" }
+            ]
+          },
+          {
+            "id": "D-Q3",
+            "question": "できることからコストを削減したい",
+            "options": [
+              { "text": "はい", "next": "D-Q4" },
+              { "text": "わからない", "next": "D-Q4" },
+              { "text": "いいえ", "next": "D-Q4" }
+            ]
+          },
+          {
+            "id": "D-Q4",
+            "question": "節電がなかなかうまくいかずに困っている",
+            "options": [
+              { "text": "はい", "next": "D-Q5" },
+              { "text": "わからない", "next": "D-Q5" },
+              { "text": "いいえ", "next": "D-Q5" }
+            ]
+          },
+          {
+            "id": "D-Q5",
+            "question": "できるだけ費用を抑えてネットワーク環境を整えたい",
+            "options": [
+              { "text": "はい", "next": "D-Q6" },
+              { "text": "わからない", "next": "D-Q6" },
+              { "text": "いいえ", "next": "D-Q6" }
+            ]
+          },
+          {
+            "id": "D-Q6",
+            "question": "コピー機・複合機のトラブルが多い",
+            "options": [
+              { "text": "はい", "next": "D-Q7" },
+              { "text": "わからない", "next": "D-Q7" },
+              { "text": "いいえ", "next": "D-Q7" }
+            ]
+          }
+        ]
+    </script>
+
+    <script>
+        $(function(){
+            var questions = JSON.parse($('#questions_data').html());
+            var question_lists = {};
+            var history = [];
+            var q_id = 'S0'; //開始
+
+            questions.forEach(q => {
+                question_lists[q.id] = q;
+            });
+
+            //質問を描画
+            function ShowQuestion(id){
+                var q = question_lists[id];
+
+                ///回答する設問がない場合、resultページへ
+                if(!q){
+                    location.href = 'result.html';
+                    return;
+                }
+
+                var box = $('<div>', {class:'question_box', 'data-id':q.id});
+
+                //S0の回答があれば表示するdivを追加
+                var answers = JSON.parse(localStorage.getItem('answers') || '{}');
+                var s0Answer = answers['S0'] || '';
+                var s0Div = $('<div>', {id: 's0_answer'}).text(s0Answer);
+
+                //S0以降は設問Noを表示
+                if(q.id.includes('-')){
+                    var split = q.id.split('-');
+                    box.append(s0Div);
+                    updateS0Display();
+                    box.append('<h1><span class="q_no">' + split[1] + '</span> ' + q.question + '</h1>');
+
+                }else{
+                    box.append('<h1>' + q.question + '</h1>');
+                }
+
+                var form = $('<div class="q_form">');
+
+                q.options.forEach((opt, i) => {
+                    var input_id = 'Q-' + id + '-' + i;
+                    var label = $('<label>', { for: input_id});
+                    var input = $('<input>', {
+                        type: 'radio',
+                        name: 'answer',
+                        id: input_id,
+                        value: opt.text,
+                        'data-next': opt.next
+                    });
+                    label.append(input).append(' ' + opt.text);
+                    form.append(label);
+                });
+
+                //次へボタン
+                var next_btn = $('<button type="button" class="blue common_btn next_btn">次へ<span class="arrow"></span></button>');
+                //戻るボタン
+                var back_btn = $('<button type="button" class="back_btn"><span class="back"></span>前の質問へ戻る</button>');
+
+                form.append(next_btn);
+                //Q1から戻るボタンを表示する
+                if(history.length > 0) form.append(back_btn);
+
+                box.append(form);
+                $('.section_container').html(box);
+
+                //保存済み回答があれば復元
+                var save_data = JSON.parse(localStorage.getItem('answers') || '{}');
+                if(save_data[q.id]){
+                    form.find('input[name="answer"][value="'+ save_data[q.id] +'"]').prop('checked', true);
+                }
+
+                //次へ
+                next_btn.on('click', function(){
+                    var checked = form.find('input[name="answer"]:checked');
+                    if(checked.length === 0){
+                        alert('選択してください');
+                        return;
+                    }
+                    var answerText = checked.val();
+                    var nextId = checked.data('next');
+                    saveAnswer(q.id, answerText);
+                    history.push(q_id);
+                    q_id = nextId;
+                    ShowQuestion(q_id);
+                });
+
+                back_btn.on('click', function(){
+                    //戻る先を取得
+                    var prev_id = history.pop() || 'Q1';
+
+                    //ローカルストレージから戻る先のデータを削除する
+                    var save_data = JSON.parse(localStorage.getItem("answers") || '{}');
+                    delete save_data[prev_id];
+                    localStorage.setItem("answers", JSON.stringify(save_data));
+
+                    //質問id更新して描画
+                    q_id = prev_id;
+                    ShowQuestion(q_id);
+                });
+            }
+
+            //再読み込み時の復元
+            var save_data = JSON.parse(localStorage.getItem("answers") || '{}');
+            if(Object.keys(save_data).length > 0){
+                //最後に答えた質問IDを探す
+                var lastq_id = Object.keys(save_data)[Object.keys(save_data).length - 1];
+                var lastAnswer = save_data[lastq_id];
+                $('.main_page').addClass('main_adjust');
+                //最後の回答のnextを取得
+                var lastNextId = question_lists[lastq_id].options.find(opt => opt.text === lastAnswer)?.next;
+
+                //履歴を作成
+                var start_id = 'S0';
+                history = [];
+                var currentId = start_id;
+                while(currentId != lastq_id){
+                    history.push(currentId);
+                    var ans = save_data[currentId];
+                    var next = question_lists[currentId].options.find(opt => opt.text === ans)?.next;
+                    currentId = next;
+                    if(!currentId) break; //念のため無限ループ回避
+                }
+
+                //次の質問から再開（未回答があればそこから）
+                q_id = lastNextId || lastq_id;
+                ShowQuestion(q_id);
+
+            }else{
+                //保存がない場合はスタートボタン待ち
+                $('.start').on('click', function(){
+                    $('.main_page').addClass('main_adjust');
+                    history = [];
+                    q_id = 'S0';
+                    ShowQuestion(q_id);
+                });
+            }
+        });
+
+        //S0の回答内容を表示
+        function updateS0Display(){
+            var data = JSON.parse(localStorage.getItem("answers") || '{}');
+            var s0_title = data["S0"];
+
+            console.log(s0_title);
+            $('#s0_answer').text(s0_title);
+        }
+        //回答保存
+        function saveAnswer(q_id, value){
+            var save_data = JSON.parse(localStorage.getItem("answers") || '{}');
+            save_data[q_id] = value;
+            localStorage.setItem("answers", JSON.stringify(save_data));
+        }
+
+        
+    </script>
 </body>
 </html>
