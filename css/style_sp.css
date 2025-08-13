@@ -124,6 +124,15 @@
     }
 
     /*q_page*/
+    .main_adjust{
+        padding:55px 20px;
+    }
+    .question_box{
+        margin:89px auto 48px;
+    }
+    .question_box[data-id="S0"]{
+        margin:0 auto;
+    }
     .question_box h1 {
         font-size: 16px;
         margin-bottom:42px;
@@ -148,6 +157,14 @@
     }
     .back_btn{
         font-size:12px;
+    }
+
+    .next_btn{
+        margin:0 auto;
+    }
+
+    .question_box .arrow::after{
+        left:9px;
     }
 
     .result_contents{

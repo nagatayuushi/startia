@@ -80,7 +80,7 @@
                             弊社及びスターティアホールディングスグループより、広告・宣伝メールが送信されます。
                         </div>
 
-                        <label><input type="checkbox" id="doui" class="req"> 同意する</label>
+                        <label><input type="checkbox" id="doui"> 同意する</label>
 
                         <button class="blue common_btn download">
                             同意してダウンロードする
@@ -107,10 +107,31 @@
 
             //ダウンロード処理(まだ未実装)
             $('.download').on('click', function(){
-                //download完了flag=1へ
-                Stotage_Save('result', 1);
+                var err_msg = [];
+                var chk_flag = 0;
 
-                
+                //チェックがない場合
+                if($('.download_file:checked').length === 0){
+                    err_msg.push('ダウンロードする資料を選択してください');
+                }
+
+                if($('#email').val() == ''){
+                    err_msg.push('メールアドレスを入力してください');
+                }
+
+                //チェックがついてない場合
+                if(!$('#doui').is(':checked')){
+                    err_msg.push('「同意する」にチェックしてください');
+                }
+
+                if(err_msg.length > 0){
+                    alert(err_msg.join('\n'));
+                    return false;
+                }
+
+                alert('OK');
+                //ダウンロード処理はここから
+                Storage_Save('result', 1);
                 location.href = '/success.html';
             });
         });
