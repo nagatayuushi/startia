@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <img src="images/LOGO.png" alt="ビジ助診断ロゴ">
+        <a href="/"><img src="images/LOGO.png" alt="ビジ助診断ロゴ"></a>
     </header>
 
     <main>
@@ -355,7 +355,7 @@
                 });
 
                 //次へボタン
-                var next_btn = $('<button type="button" class="blue common_btn next_btn">次へ<span class="arrow"></span></button>');
+                var next_btn = $('<button type="button" class="gray common_btn next_btn" disabled>次へ<span class="arrow"></span></button>');
                 //戻るボタン
                 var back_btn = $('<button type="button" class="back_btn"><span class="back"></span>前の質問へ戻る</button>');
 
@@ -368,9 +368,21 @@
 
                 //保存済み回答があれば復元
                 var save_data = JSON.parse(localStorage.getItem('answers') || '{}');
+                // if(save_data[q.id]){
+                //     form.find('input[name="answer"][value="'+ save_data[q.id] +'"]').prop('checked', true);
+                // }
                 if(save_data[q.id]){
                     form.find('input[name="answer"][value="'+ save_data[q.id] +'"]').prop('checked', true);
+                    //保存があればボタン有効化
+                    next_btn.prop('disabled', false).addClass('active');
+                    $('.arrow').addClass('active');
                 }
+
+                //ラジオ選択時にdisabled解除＆色変更
+                form.on('change', 'input[name="answer"]', function(){
+                    next_btn.prop('disabled', false).addClass('active');
+                    $('.arrow').addClass('active');
+                });
 
                 //次へ
                 next_btn.on('click', function(){
