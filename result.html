@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style_sp.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -55,11 +56,11 @@
                     <h2>おすすめの資料はこちら！</h2>
                     <div class="download_lists">
                         <div class="download_list_column">
-                            <label><input type="checkbox"> クラウドボイスの導入ガイド</label>
+                            <label><input type="checkbox" class="download_file"> クラウドボイスの導入ガイド</label>
                             <img src="images/profile1.png" alt="クラウドボイスの導入ガイド">
                         </div>
                         <div class="download_list_column">
-                            <label><input type="checkbox"> 四大振込代行サービス徹底比較</label>
+                            <label><input type="checkbox" class="download_file"> 四大振込代行サービス徹底比較</label>
                             <img src="images/profile2.png" alt="四大振込代行サービス徹底比較">
                         </div>
                     </div>
@@ -93,14 +94,25 @@
 
     <script>
         $(document).ready(function(){
-            //ローカルストレージのデータ削除
-            localStorage.removeItem ("answers");
+            //ローカルストレージのデータ取得
+            var data = localStorage.getItem('answers');
+            //オブジェクト化
+            var parsed = JSON.parse(data || '{}');
+            var comp_val = parsed.comp;
 
-            // //ダウンロード処理(まだ未実装)
-            // $('#download').on('click', function(){
-            //     //ローカルストレージのデータ削除
-            //     localStorage.removeItem ("answers");
-            // });
+            //回答完了になってない場合、indexへ
+            if(comp_val != 1){
+                location.href = '/index.html';
+            }
+
+            //ダウンロード処理(まだ未実装)
+            $('.download').on('click', function(){
+                //download完了flag=1へ
+                Stotage_Save('result', 1);
+
+                
+                location.href = '/success.html';
+            });
         });
     </script>
 </body>

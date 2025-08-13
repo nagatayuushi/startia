@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style_sp.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -171,16 +172,19 @@
 
     <script>
         $(document).ready(function(){
-            $('.footer_title').on('click', function(){
-                var li = $(this).parent();
-                var btn = $(this).find('.toggle_btn');
-                var subul = li.children('ul');
+            //ローカルストレージのデータ取得
+            var data = localStorage.getItem('answers');
+            //オブジェクト化
+            var parsed = JSON.parse(data || '{}');
+            var comp_val = parsed.result;
 
-                li.toggleClass('open');
-                subul.slideToggle();
+            if(comp_val != 1){
+                location.href = '/index.html';
+            }
 
-                //＋と−の切り替え
-                btn.text(li.hasClass('open') ? '−' : '＋');
+            $('.back_btn').on('click', function(){
+                //ローカルストレージのデータ削除
+                localStorage.removeItem('answers');
             });
         });
     </script>

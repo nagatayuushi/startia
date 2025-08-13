@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style_sp.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js" charset="UTF-8"></script>
 </head>
 
 <body>
@@ -82,9 +83,9 @@
             "id": "A-Q4",
             "question": "コロナ渦以降、テレワークが社内で普及した",
             "options": [
-              { "text": "はい", "next": "A-Q4" },
-              { "text": "わからない", "next": "A-Q4" },
-              { "text": "いいえ", "next": "A-Q4" }
+              { "text": "はい", "next": "A-Q5" },
+              { "text": "わからない", "next": "A-Q5" },
+              { "text": "いいえ", "next": "A-Q5" }
             ]
           },
           {
@@ -301,6 +302,16 @@
 
     <script>
         $(function(){
+            //ローカルストレージのデータ取得
+            var data = localStorage.getItem('answers');
+            //オブジェクト化
+            var parsed = JSON.parse(data || '{}');
+            var comp_val = parsed.result;
+
+            if(comp_val == 1){
+                location.href = '/result.html';
+            }
+
             var questions = JSON.parse($('#questions_data').html());
             var question_lists = {};
             var history = [];
@@ -314,8 +325,10 @@
             function ShowQuestion(id){
                 var q = question_lists[id];
 
-                ///回答する設問がない場合、resultページへ
+                //回答する設問がない場合、resultページへ
                 if(!q){
+                    //回答完了flag=1へ
+                    Stotage_Save('comp', 1);
                     location.href = 'result.html';
                     return;
                 }
@@ -343,13 +356,12 @@
                 q.options.forEach((opt, i) => {
                     var input_id = 'Q-' + id + '-' + i;
                     var label = $('<label>', { for: input_id});
-                    var input = $('<input>', {
-                        type: 'radio',
-                        name: 'answer',
-                        id: input_id,
-                        value: opt.text,
-                        'data-next': opt.next
-                    });
+                        var input = $('<input>', {
+                            type: 'radio',
+                            name: 'answer',
+                            id: input_id,
+                            value: opt.text
+                        }).attr('data-next', opt.next);
                     label.append(input).append(' ' + opt.text);
                     form.append(label);
                 });
@@ -391,11 +403,11 @@
                         alert('選択してください');
                         return;
                     }
-                    var answerText = checked.val();
-                    var nextId = checked.data('next');
-                    saveAnswer(q.id, answerText);
+                    var answer_text = checked.val();
+                    var next_id = checked.attr('data-next');
+                    Stotage_Save(q.id, answer_text);
                     history.push(q_id);
-                    q_id = nextId;
+                    q_id = next_id;
                     ShowQuestion(q_id);
                 });
 
@@ -456,15 +468,10 @@
             var data = JSON.parse(localStorage.getItem("answers") || '{}');
             var s0_title = data["S0"];
 
-            console.log(s0_title);
+            // console.log(s0_title);
             $('#s0_answer').text(s0_title);
         }
-        //回答保存
-        function saveAnswer(q_id, value){
-            var save_data = JSON.parse(localStorage.getItem("answers") || '{}');
-            save_data[q_id] = value;
-            localStorage.setItem("answers", JSON.stringify(save_data));
-        }
+        
 
         
     </script>

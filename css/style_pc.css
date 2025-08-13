@@ -52,6 +52,7 @@ input[type=radio] {
 header{
     max-width:1280px;
     margin:0 auto;
+    padding:0 20px;
 }
 
 header img{
@@ -185,19 +186,8 @@ small{
     font-weight: bold;
 }
 
-.footer_title .toggle_btn {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #FFF;
-    user-select: none;
-}
-
-.footer_top ul ul {
-    display: none;
-    padding-left: 15px;
+.footer_title .toggle_btn{
+    display:none;
 }
 
 /* .footer_top .open .toggle_btn {
@@ -527,6 +517,7 @@ h1 span{
     border:none;
     text-decoration:underline;
     font-size:14px;
+    color:#202020;
 }
 .back{
 	position:relative;
@@ -693,6 +684,9 @@ h1 span{
     z-index: 10;
     font-size:24px;
 }
+.success_page a{
+    text-decoration-line:none;
+}
 
 .balloon{
     position:relative;
@@ -805,6 +799,12 @@ h1 span{
     gap: 8px;
     flex-direction: column;
     align-items: center;
+}
+.social_links a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
 }
 .social_links li span{
     color:#13485B;
