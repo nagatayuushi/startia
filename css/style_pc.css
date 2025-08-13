@@ -500,6 +500,7 @@ h1 span{
     width: 43px;
     height: 43px;
     margin-right:8px;
+    flex-shrink:0;
 }
 
 .q_form label input[type="radio"]{
@@ -633,6 +634,7 @@ h1 span{
     border-radius: 50%;
     box-sizing: content-box;
     background:#3084A3;
+    flex-shrink:0;
   }
   
   .chk > span {

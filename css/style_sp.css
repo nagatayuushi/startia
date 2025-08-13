@@ -155,6 +155,7 @@
     .text_lists li{
         font-size:12px;
         align-items:flex-start;
+        text-align:left;
     }
 
     .recommend{

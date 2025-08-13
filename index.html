@@ -324,8 +324,8 @@
 
                 //S0の回答があれば表示するdivを追加
                 var answers = JSON.parse(localStorage.getItem('answers') || '{}');
-                var s0Answer = answers['S0'] || '';
-                var s0Div = $('<div>', {id: 's0_answer'}).text(s0Answer);
+                var first_answer = answers['S0'] || '';
+                var s0Div = $('<div>', {id: 's0_answer'}).text(first_answer);
 
                 //S0以降は設問Noを表示
                 if(q.id.includes('-')){
