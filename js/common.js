@@ -6,7 +6,7 @@ $(document).ready(function(e){
         var subul = li.children('ul');
 
         //ボタンが表示されている時だけ実行
-        if (btn.is(':visible')){
+        if(btn.is(':visible')){
             li.toggleClass('open');
             subul.slideToggle();
 
