@@ -67,6 +67,7 @@
         text-align:center;
         color:#fff;
         padding:10px;
+        font-size:11px;
     }
 
     .footer_nav{
@@ -239,9 +240,14 @@
         padding: 30px 15px;
     }
 
+    .success_page h1{
+        margin-bottom:14px;
+    }
+
     .success_page p{
         margin:16px 0 24px;
         font-size:14px;
+        font-weight:600;
     }
 
     .balloon p{
@@ -288,12 +294,12 @@
         text-align: center;
     }
 
-    .social_links li:nth-child(-n+2) {
-        flex: 0 0 calc(50% - 60px);
+    .social_links li:nth-child(-n+2){
+        flex:0 0 calc(50% - 40px);
     }
 
-    .social_links li:nth-child(n+3) {
-        flex: 0 0 calc(33.333% - 10px);
+    .social_links li:nth-child(n+3){
+        flex:0 0 calc(33.333% - 10px);
     }
 
     .social_links li span{
