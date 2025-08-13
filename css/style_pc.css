@@ -445,6 +445,7 @@ h1 span{
 .question_box h1{
     font-size:24px;
     margin-bottom:50px;
+    text-align:left;
 }
 
 .question_box .arrow::after{

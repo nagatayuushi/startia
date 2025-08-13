@@ -89,7 +89,10 @@
         padding:18px;
     }
 
-    h1 {
+    .main_page{
+        border:3px solid #2D7E98;
+    }
+    h1{
         /* font-size:28px; */
         font-size:18px;
         margin-bottom:39px;
@@ -99,6 +102,10 @@
         font-size:41px;
         width:54px;
         height:54px;
+    }
+
+    .title h1{
+        font-size:28px;
     }
 
     .common_btn{
@@ -135,6 +142,8 @@
 
     .q_no{
         font-size:15px;
+        width:33px;
+        height:33px;
     }
     .back_btn{
         font-size:12px;
@@ -142,6 +151,10 @@
 
     .result_contents{
         padding:10px;
+        border-top:40px solid #2D7E98;
+        border-bottom:40px solid #2D7E98;
+        border-left:15px solid #2D7E98;
+        border-right:15px solid #2D7E98;
     }
 
     .about{
@@ -276,7 +289,7 @@
     }
 
     .social_links li:nth-child(-n+2) {
-        flex: 0 0 calc(50% - 10px);
+        flex: 0 0 calc(50% - 60px);
     }
 
     .social_links li:nth-child(n+3) {
